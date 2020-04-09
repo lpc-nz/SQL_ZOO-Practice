@@ -1,7 +1,8 @@
 --1. Find the country that start with Y
 
-SELECT name FROM world
-  WHERE name LIKE 'Y%';
+SELECT name 
+FROM world
+WHERE name LIKE 'Y%';
 
 --2. Find the countries that end with y
 
@@ -80,11 +81,11 @@ WHERE capital LIKE concat('%', name, '%');
 
 SELECT name, capital 
 FROM world 
-WHERE capital LIKE concat('%', name, '%') AND capital > name;
+WHERE capital LIKE concat('%', name, '%') AND capital <> name;
 
 --15. Show the name and the extension where the capital is an extension of name of the country.
 
 SELECT name,
   REPLACE(capital, name, '') 
 FROM world 
-WHERE capital LIKE concat('%', name, '%') AND capital > name;
+WHERE capital LIKE concat('%', name, '%') AND capital <> name;
